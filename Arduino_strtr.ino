@@ -1,7 +1,7 @@
 void setup() {
   // Set serial baudrate
   Serial.begin(9600);
-  // define originalChar & translateChar
+  // Define originalChar & translateChar
   String originalChar = "abcdefghijklmnopqrstuvwxyz",
          translateChar = "zyxwvutsrqponmlkjihgfedcba",
          // example string
@@ -10,13 +10,13 @@ void setup() {
     translatedString1 = "",
          translatedString2 = "";
 
-  // wipe serial screen
+  // Wipe serial screen
   Serial.println("\n");
   Serial.println("\n");
   Serial.println("Example implementing php strtr() in Arduino C:\n");
 
-  // example translating char
-  // Output
+  // Example translating char
+  // Output:
   // Original String #1: the quick brown fox jumps over the lazy dog
   // Translated String #1: gsv jfrxp yildm ulc qfnkh levi gsv ozab wlt
   translatedString1 = strtr(originalString, originalChar, translateChar);
@@ -26,8 +26,8 @@ void setup() {
   Serial.println(translatedString1);
   Serial.println("\n");
 
-  // example revert back translated char
-  // Output
+  // Example revert back translated char
+  // Output:
   // Original String #2: gsv jfrxp yildm ulc qfnkh levi gsv ozab wlt
   // Translated String #2: the quick brown fox jumps over the lazy dog
   translatedString2 = strtr(translatedString1, translateChar, originalChar);
